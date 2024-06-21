@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidenav Push Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    #mySidenav {
+      height: 100%; /* Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: #111; /* Black */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+      padding-top: 60px; /* Place content 60px from the top */
+    }
+
+    #mySidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    #mySidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    #mySidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="openNav">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+          </svg>
+          Menu
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Side Navigation -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $("#openNav, #openNavSpan").click(function() {
+    $("#mySidenav").css("width", "250px");
+    $("#main").css("margin-left", "250px");
+  });
+
+  $(".closebtn").click(function() {
+    $("#mySidenav").css("width", "0");
+    $("#main").css("margin-left", "0");
+  });
+});
+</script>
+
+</body>
+</html>
